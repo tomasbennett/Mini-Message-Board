@@ -1,0 +1,31 @@
+:root{
+    font-size: 62.5%;
+}
+
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+
+
+    box-sizing: border-box;
+}
+
+body,
+html{
+    font-size: 1.6rem;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgb(29, 29, 29);
+    color: rgb(250, 250, 250);
+
+    display: flex;
+
+    overflow: hidden;
+}
