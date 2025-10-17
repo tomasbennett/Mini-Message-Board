@@ -22,10 +22,13 @@ exports.newMessageCreatedPOST = (req, res) => {
         });
     }
 
-    addMessage({ 
-        username, 
-        time: time || new Date(), 
-        body 
+    const [year, month, day] = time.split('-').map(Number);
+    const localDate = new Date(year, month - 1, day);
+
+    addMessage({
+        username,
+        time: localDate || new Date(),
+        body
     });
 
     res.redirect("/");
@@ -33,10 +36,10 @@ exports.newMessageCreatedPOST = (req, res) => {
 
 
 exports.showAllMessages = (request, response) => {
-    response.render("index", { messages: getAllMessages() });
+    response.render("index", { pageTitle: "Home", messages: getAllMessages() });
 }
 
 
 exports.createNewMessageForm = (request, response) => {
-    response.render("new");
+    response.render("new", { pageTitle: "New Message" });
 }
