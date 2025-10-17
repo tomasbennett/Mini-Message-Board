@@ -8,7 +8,7 @@ const messages = [
         body: `
             I think it was 5, I think I got 5 yeah.
         `,
-        time: new Date()
+        time: new Date("1989-04-15")
     },
     {
         id: 2,

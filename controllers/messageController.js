@@ -2,7 +2,7 @@ const { addMessage, removeMessage, getAllMessages } = require("../models/message
 
 
 exports.newMessageCreatedPOST = (req, res) => {
-    const { username, time, body } = req.body;
+    const { username, body } = req.body;
 
     if (!username || typeof username !== "string" || username.trim().length === 0) {
         return res.status(400).json({
@@ -16,18 +16,9 @@ exports.newMessageCreatedPOST = (req, res) => {
         });
     }
 
-    if (time && isNaN(Date.parse(time))) {
-        return res.status(400).json({
-            error: "Invalid 'time' field. Must be a valid date."
-        });
-    }
-
-    const [year, month, day] = time.split('-').map(Number);
-    const localDate = new Date(year, month - 1, day);
-
     addMessage({
         username,
-        time: localDate || new Date(),
+        time: new Date(),
         body
     });
 

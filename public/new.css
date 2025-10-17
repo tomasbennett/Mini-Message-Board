@@ -1,0 +1,62 @@
+form{
+    display: flex;
+    flex-direction: column;
+
+    width: min(30rem, 80%);
+
+    row-gap: 3rem;
+
+    padding: 2rem 3rem;
+
+    background-color: rgb(116, 116, 116);
+
+    font-size: larger;
+
+    border-radius: 2rem;
+
+    box-shadow: 1rem 1rem 2rem black;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+
+    row-gap: .5rem;
+}
+
+input{
+    
+    padding-bottom: .5rem;
+}
+
+
+textarea{
+    resize: vertical;
+
+    min-height: 6rem;
+}
+
+
+input,
+textarea{
+    padding-top: .5rem;
+
+    padding-left: .3rem;
+}
+
+
+button{
+    cursor: pointer;
+
+    padding: 1rem;
+
+    border-radius: 1rem;
+
+    font-weight: bolder;
+
+    transition: transform .2s linear;
+}
+
+button:hover{
+    transform: translateY(-.3rem);
+}
